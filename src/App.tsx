@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { MantineProvider } from "@mantine/core";
 import Papa from "papaparse";
+import PlvForm from "./form/PlvForm";
 
 function App() {
   // Parsed JSON data from CSV
@@ -34,6 +36,7 @@ function App() {
 
   return (
     <div style={{ padding: "1rem" }}>
+      <PlvForm />
       <h1>CSV to JSON Converter</h1>
       <input type="file" accept=".csv" onChange={handleFileChange} />
       {data.length > 0 && (
